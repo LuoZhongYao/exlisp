@@ -1,0 +1,36 @@
+body{text-align:center;}
+li{
+    position:relative;
+    left:5%;
+    text-align:left;
+    list-style:none;
+}
+
+h3{
+    color: #088;
+}
+
+pre {
+    font-family: Bitstream Vera Sans Mono, monospace;
+}
+a {
+    text-decoration: none;
+    color: #096;
+    padding: 2px;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: #096;
+    color: white;
+}
+a:active {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+}
+
+img{
+    width:30px;
+    height:30px;
+}
