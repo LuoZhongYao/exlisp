@@ -1,6 +1,6 @@
 (defpackage #:biz.naiz.web
-  (:use :excl #:cl #:net.aserve #:net.html.generator))
-  ;(:use #:acl-compat.excl #:net.aserve #:net.html.generator))
+#+allegro  (:use :excl #:cl #:net.aserve #:net.html.generator)
+#+(or sbcl clisp ccl) (:use #:cl #:acl-compat.excl #:net.aserve #:net.html.generator))
   ;(:use #:cl #:net.aserve #:net.html.generator))
 
 (in-package #:biz.naiz.web)
@@ -41,8 +41,8 @@
   (directory (concatenate 'string path "*.*")))
 
 
-(defmacro list-directory-to-html (path-input)
-  `(let* ((path (concatenate 'string ,path-input "/"))
+(defun list-directory-to-html (path-input)
+  (let* ((path (concatenate 'string path-input "/"))
           (res-path (concatenate 'string "~/www/res" path)))
      (html (:ul
              (dolist (file (get-directory-list res-path))
